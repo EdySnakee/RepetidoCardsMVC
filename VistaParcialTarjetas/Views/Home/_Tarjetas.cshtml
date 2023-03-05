@@ -1,0 +1,48 @@
+﻿
+
+<div class="container" style="margin: 50px 0px 50px 0px;">
+
+    <div class="row gallary-content-top">
+        <div class="col-12 stats-heading-area text-center wow fadeInUp">
+            <span class="sub-heading">Listado de propiedades </span>
+            <h4 class="font-size: 85px; ">PROPIEDADES<span> <span class="color js-rotating">DE BIENES RAÍCES, Y DESARROLLO INMOBILIARIO</span></span></h4>
+            
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row gallary-manage-top">
+    @for (int i = 0; i < 6; i++)
+    {
+        <div class="col-sm-12 col-md-12 col-lg-4 wow fadeInUp">
+            <div class="card" style="margin-bottom:20px">
+                <img class="card-img-top" src="@Model[i % Model.Count].ImagenURL"
+                     alt="@Model[i % Model.Count].Nombre" style="overflow:hidden;">
+                <div class="card-body"></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-6">
+                            <div class="property-details">
+                                <h5>@Model[i % Model.Count].Descripcion</h5>
+                                @* <ul class="user-rating">
+                            <li><a href="#"><i class="lni-star-filled"></i></a></li>
+                            <li><a href="#"><i class="lni-star-filled"></i></a></li>
+                            <li><a href="#"><i class="lni-star-filled"></i></a></li>
+                            <li><a href="#"><i class="lni-star-filled"></i></a></li>
+                            <li><a href="#"><i class="lni-star"></i></a></li>
+                            </ul>*@
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-6 text-right">
+                            <div class="property-price">
+                                <h3>@Model[i % Model.Count].Precio.ToString("C")</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

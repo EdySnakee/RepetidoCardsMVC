@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PropiedadDTO>
+
+
+
+
+@if (Model is not null)
+{
+    <div class="container" >
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var propiedad in Model)
+            {
+                <div class="col" id="card1">
+                    <div class="card h-100" id="" data-aos="zoom-in" style="box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+                                transition: all 400ms ease;" >
+                        <img src="@propiedad.imgUrl" class="card-img-top" alt="Imagen Prop" />
+                        <div class="card-body"> 
+                            <h5 class="card-title">@propiedad.Titulo</h5>
+                            <p class="card text">@propiedad.Descripcion</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-primary" href="@propiedad.Link" target="_blank"
+                               rel="noopener noreferrer">Visitar</a>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+
+    </div>
+}
+
